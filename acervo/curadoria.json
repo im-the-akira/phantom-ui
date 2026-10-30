@@ -1,0 +1,50 @@
+{
+  "01": {
+    "id": "cur.svchost",
+    "cat": "01",
+    "insta": "Medio",
+    "pt": "Reduzir a quantidade de processos svchost.exe",
+    "en": "Reduce the number of svchost.exe processes",
+    "oque_pt": "Nao para nenhum processo. Svchost.exe e o hospedeiro que roda os servicos do Windows: por padrao, varios servicos ficam no mesmo processo. Esta opcao NAO encerra servico nenhum - ela aumenta a memoria usada como limite de agrupamento, forçando o Windows a juntar MAIS servicos em cada svchost.exe. Resultado: menos processos svchost.exe na Lista de Tarefas e menos threads.",
+    "oque_en": "It does not stop any process. svchost.exe hosts the Windows services: by default several services share one host. This does NOT stop anything - it raises the memory limit used to group them, forcing Windows to pack MORE services into each svchost.exe. Result: fewer svchost.exe processes in Task Manager.",
+    "porque": "O Windows 8+ separou os servicos de proposito: assim, um servico com defeito derruba apenas a si mesmo. Juntando tudo de volta, um unico servico defeituoso derruba todos os que dividem o mesmo processo. O acervo usa 9 valores diferentes para isso (4 MB a 128 MB), sem consenso - sinal de que e folklore, nao ajuste medido.",
+    "porque_en": "Windows 8+ separated services on purpose so one faulty service only takes itself down. Packing them back means a single bad service takes down everything sharing that host. The collection uses 9 different values (4 MB to 128 MB) with no consensus - a sign of folklore, not measured tuning.",
+    "reboot": true,
+    "itens": [
+      { "pt": "Agrupar servicos em menos processos (64 MB)", "en": "Group services into fewer hosts (64 MB)",
+        "cmd": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\" /v \"SvcHostSplitThresholdInKB\" /t REG_DWORD /d \"67108864\" /f >nul 2>&1",
+        "rev": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\" /v \"SvcHostSplitThresholdInKB\" /f >nul 2>&1",
+        "nota_pt": "Valor ausente = padrao do Windows (separacao normal).", "nota_en": "Value absent = Windows default (normal splitting)." }
+    ]
+  },
+  "02": {
+    "id": "cur.largescache",
+    "cat": "09",
+    "insta": "Alto",
+    "pt": "Cache grande de CPU (forcar o nucleo na RAM)",
+    "en": "Large CPU cache (keep the kernel in RAM)",
+    "oque_pt": "O Windows assume, por padrao, que a CPU tem um cache L2 pequeno e pode paginar drivers para o arquivo de paginacao. Estas 4 chaves mandam o Windows assumir um L2 de 256 KB e manter o nucleo sempre na RAM fisica, sem paginar. E o tweak classico de 'big cache'.",
+    "oque_en": "By default Windows assumes a small L2 cache and may page drivers to disk. These 4 keys tell it to assume a 256 KB L2 and keep the kernel permanently in physical RAM, never paged out. This is the classic 'big cache' tweak.",
+    "porque": "O PROPRIO acervo do usuario classifica como Alto risco, e o ReverterStutter.ps1 lista exatamente este conjunto como causa de travadas. DisablePagingExecutable e o mais perigoso dos quatro: sem RAM suficiente, o sistema trava ou da BSOD. Em maquinas com 4-8 GB o ganho e nenhum e o risco e real.",
+    "porque_en": "The user's own collection rates this High risk, and ReverterStutter.ps1 lists exactly this set as a cause of freezes. DisablePagingExecutive is the most dangerous of the four: with insufficient RAM the system can hang or BSOD. On 4-8 GB machines the gain is nil and the risk is real.",
+    "reboot": true,
+    "itens": [
+      { "pt": "Assumir cache L2 de 256 KB", "en": "Assume a 256 KB L2 cache",
+        "cmd": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"SecondLevelDataCache\" /t REG_DWORD /d \"256\" /f >nul 2>&1",
+        "rev": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"SecondLevelDataCache\" /f >nul 2>&1",
+        "nota_pt": "Nao mede nada. E o Windows recalculando a partir do seu CPU.", "nota_en": "Measures nothing. Windows recomputes it from your CPU." },
+      { "pt": "Usar o cache do sistema em vez do espaco livre", "en": "Use the system cache instead of free space",
+        "cmd": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"LargeSystemCache\" /t REG_DWORD /d \"1\" /f >nul 2>&1",
+        "rev": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"LargeSystemCache\" /f >nul 2>&1",
+        "nota_pt": "Somente leitura de disco usa esse caminho. Ganho quase sempre zero.", "nota_en": "Only disk reads use this path. Gain is near zero." },
+      { "pt": "Nao paginar o nucleo para o disco", "en": "Never page the kernel out to disk",
+        "cmd": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"DisablePagingExecutive\" /t REG_DWORD /d \"1\" /f >nul 2>&1",
+        "rev": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"DisablePagingExecutive\" /f >nul 2>&1",
+        "nota_pt": "PERIGOSO. Com pouca RAM, o nucleo fica sem espaco e o PC trava ou da tela azul.", "nota_en": "DANGEROUS. With little RAM the kernel runs out of space and the PC freezes or blue-screens." },
+      { "pt": "Limpar o arquivo de paginacao ao desligar", "en": "Clear the page file at shutdown",
+        "cmd": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"ClearPageFileAtShutdown\" /t REG_DWORD /d \"1\" /f >nul 2>&1",
+        "rev": "reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"ClearPageFileAtShutdown\" /f >nul 2>&1",
+        "nota_pt": "Deixa as senhas do Windows limpas no disco. Ganho: desligamento um pouco mais rapido.", "nota_en": "Keeps Windows passwords off the disk. Gain: marginally faster shutdown." }
+    ]
+  }
+}

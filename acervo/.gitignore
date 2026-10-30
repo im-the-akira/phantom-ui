@@ -1,0 +1,24 @@
+# Configuração local (NUNCA commitar)
+.env
+.env.local
+.env.*.local
+
+# Chaves de API
+*.key
+*.pem
+*.pfx
+
+# Dependências de build
+node_modules/
+pom.xml
+*.jar
+target/
+dist/
+build/
+
+# Logs
+*.log
+
+# Ambiente
+.DS_Store
+Thumbs.db

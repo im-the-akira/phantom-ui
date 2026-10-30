@@ -1,0 +1,264 @@
+
+#===============diminuio processos (otimização do windows)================
+quais processo ele para?
+nivel de instabilidade que pode causar no sistema
+Liste eles e separe cada um para que possa ser selecionavel isso e tambem precisa ter a reverção de cada um.
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"SvcHostSplitThresholdInKB"=dword:04000000
+
+
+#===============habilita cache da CPU (otimização do windows)================
+pra que serve?
+nivel de instabilidade que pode causar no sistema
+Liste as alterações que é feita e separe cada um para que possa ser selecionavel isso e tambem precisa ter a reverção de cada um.
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"ClearPageFileAtShutdown"=dword:00000001
+"LargeSystemCache"=dword:00000001
+"DisablePagingExecutive"=dword:00000001
+"SecondLevelDataCache"=dword:00000100
+
+#===============um monte de alterações================
+pra que serve?
+nivel de instabilidade que pode causar no sistema
+Liste as alterações que é feita e separe cada um para que possa ser selecionavel isso e tambem precisa ter a reverção de cada um.
+
+Windows Registry Editor Version 5.00
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0 	 	 	 M a d e   B y   T e c h   S a n j e e t 
+"value"=dword:00000000
+"MaintenanceDisabled"=dword:00000001
+     7 2 , 0 0 , 0 0 , 0 0 
+"MouseKeysOn"=dword:00000000
+"GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000001
+; MMCSS Tweaks
+Windows Registry Editor Version 5.00                ---/RegEdit by Techie Savi
+     6 5 , 0 0 , 7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 7 7 , 0 0 , 6 f , 0 0 , 7 2 , 0 0 , 6 b , 0 0 , 6 9 , 0 0 , 6 e , 0 0 , 6 7 , 0 0 , 2 e , 0 0 , 6 1 , \ 
+ @ = " @ m a i n . c p l , - 1 0 2 0 " 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+ " N W P e n " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+ " L o c k S c r e e n A u t o L o c k A c t i v e " = " 0 " 
+     7 4 , 0 0 , 2 5 , 0 0 , 5 c , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 6 f , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 5 c , 0 0 , 6 1 , 0 0 , 6 5 , \ 
+     0 0 , 7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 e , 0 0 , 6 5 , 0 0 , 7 3 , 0 0 , 7 7 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 7 0 , 0 0 , 6 5 , 0 0 , 6 e , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+"EnableSuperfetch"=dword:00000000
+"RMHdcpKeyglobZero"=dword:00000001
+"Scheduling Category"="High"
+"HibernateEnabled"=dword:00000000
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0                       - - - / M a d e   b y   T e c h i e   s a v i 
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
+ " S i z e A l l " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , \ 
+ [ H K E Y _ L O C A L _ M A C H I N E \ S Y S T E M \ C u r r e n t C o n t r o l S e t \ C o n t r o l ] 
+ [ H K E Y _ C U R R E N T _ U S E R \ S y s t e m \ G a m e C o n f i g S t o r e ] 
+[HKEY_CURRENT_USER\System\GameConfigStore]
+ " S c h e m e   S o u r c e " = d w o r d : 0 0 0 0 0 0 0 2 
+"MouseHoverTime"=dword:0000000a
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+ " G P U   P r i o r i t y " = d w o r d : 0 0 0 0 0 0 0 8 
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0 	                                                                                 R e g e d i t   b y / T e c h i e s a v i 
+ " S i z e N S " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+ [ H K E Y _ C U R R E N T _ U S E R \ S O F T W A R E \ M i c r o s o f t \ W i n d o w s \ C u r r e n t V e r s i o n \ G a m e D V R ] 
+"KeyboardResponseOn"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IRQ16Priority"=dword:00000002
+"windowsCompatible"=dword:00000001
+"AutoEndTasks"="1"
+ [ H K E Y _ U S E R S \ S - 1 - 5 - 1 8 \ C o n t r o l   P a n e l \ D e s k t o p ] 
+     0 0 , 7 4 , 0 0 , 2 5 , 0 0 , 5 c , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 6 f , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 5 c , 0 0 , 6 1 , 0 0 , \ 
+"SystemResponsiveness"=dword:00000000
+ " A r r o w " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics]
+"SoftLandingEnabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR]
+     0 0 , 7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 d , 0 0 , 6 f , 0 0 , 7 6 , 0 0 , 6 5 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+ [ H K E Y _ L O C A L _ M A C H I N E \ S Y S T E M \ C u r r e n t C o n t r o l S e t \ C o n t r o l \ P o w e r \ P o w e r T h r o t t l i n g ] 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+     2 5 , 0 0 , 5 c , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 6 f , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 5 c , 0 0 , 6 1 , 0 0 , 6 5 , 0 0 , 7 2 , \ 
+ " M a c h i n e P r e f e r r e d U I L a n g u a g e s " = h e x ( 7 ) : 6 5 , 0 0 , 6 e , 0 0 , 2 d , 0 0 , 5 5 , 0 0 , 5 3 , 0 0 , 0 0 , 0 0 
+Windows Registry Editor Version 5.00
+ " N o " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , 0 0 , \ 
+"OverlayTestMode"=dword:00000005
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 5 , 0 0 , 7 7 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+ ;   M a j o r G e e k s . C o m 
+"SubscribedContent-310093Enabled"=dword:00000000
+; Disable Power Throttling
+"Priority"=dword:00000006
+ " A l l o w g a m e D V R " = d w o r d : 0 0 0 0 0 0 0 0 
+Windows Registry Editor Version 5.00                     Regedit  by /Techiesavi
+ " S t a r t " = d w o r d : 0 0 0 0 0 0 0 4 
+     0 0 , 6 f , 0 0 , 5 f , 0 0 , 7 5 , 0 0 , 6 e , 0 0 , 6 1 , 0 0 , 7 6 , 0 0 , 6 1 , 0 0 , 6 9 , 0 0 , 6 c , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , \ 
+ [ H K E Y _ L O C A L _ M A C H I N E \ S O F T W A R E \ P o l i c i e s \ M i c r o s o f t \ W i n d o w s \ G a m e D V R ] 
+"NetworkThrottlingIndex"=dword:00000008
+ [ H K E Y _ L O C A L _ M A C H I N E \ S O F T W A R E \ M i c r o s o f t \ W i n d o w s   N T \ C u r r e n t V e r s i o n \ M u l t i m e d i a \ S y s t e m P r o f i l e \ T a s k s \ G a m e s ] 
+[HKEY_CURRENT_USER\Control Panel\Accessibility\MouseKeys]
+ " H e l p " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+ [ H K E Y _ L O C A L _ M A C H I N E \ S Y S T E M \ C u r r e n t C o n t r o l S e t \ C o n t r o l \ P o w e r ] 
+Windows Registry Editor Version 5.00       ---/Made by Techie savi
+ " A p p S t a r t i n g " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , \ 
+"Attributes"=dword:00000002Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 8 , 0 0 , 6 5 , 0 0 , 6 c , 0 0 , 7 0 , 0 0 , 7 3 , 0 0 , 6 5 , 0 0 , 6 c , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , \ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"ShowSyncProviderNotifications"=dword:00000000
+Windows Registry Editor Version 5.00
+ " S i z e W E " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+"SilentInstalledAppsEnabled"=dword:00000000
+"FeatureSettingsOverride"=dword:00000003
+"Affinity"=hex:0f
+"HungAppTimeout"="1000"
+ " H a n d " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0                                                               / R e g e d i t   b y   T e c h i e s a v i 
+ " A p p C a p t u r e E n a b l e d " = d w o r d : 0 0 0 0 0 0 0 0 
+; Disable Full Screen Optimizations Globally
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 e , 0 0 , 7 3 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+"EnablePreemption"=dword:00000000
+"SystemPaneSuggestionsEnabled"=dword:00000000
+"CpuPriorityClass"=dword:00000003
+ [ H K E Y _ L O C A L _ M A C H I N E \ S Y S T E M \ C u r r e n t C o n t r o l S e t \ S e r v i c e s \ G p u E n e r g y D r v ] 
+"Start"=dword:00000004
+"WaitToKillServiceTimeout"="2000"
+ " W a i t " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , 7 4 , \ 
+"PowerThrottlingOff"=dword:00000001
+Windows Registry Editor Version 5.00 --- Registry File
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0             - - - / R e g E d i t   b y   T e c h i e   S a v i 
+ " D r a g F u l l W i n d o w s " = " 1 " 
+"Background Only"="False"
+     0 0 , 6 e , 0 0 , 6 9 , 0 0 , 0 0 , 0 0 
+"SystemResponsiveness"=dword:00000001
+ " C r o s s h a i r " = h e x ( 2 ) : 0 0 , 0 0 
+ " F o n t S m o o t h i n g O r i e n t a t i o n " = d w o r d : 0 0 0 0 0 0 0 1 
+ " F o n t S m o o t h i n g T y p e " = d w o r d : 0 0 0 0 0 0 0 2 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+; Disable HibernationÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0             - - - / R e g E d i t   b y   T e c h i e   S a v i 
+"behaviorMode"=dword:00000000
+"PowerThrottlingOff"=dword:00000001
+"GPU Priority"=dword:00000008
+"IRQ8Priority"=dword:00000001
+     0 0 , 7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 e , 0 0 , 7 7 , 0 0 , 7 3 , 0 0 , 6 5 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+"GameDVR_EFSEFeatureFlags"=dword:00000000
+"LowLevelHooksTimeout"="1000"
+"Win32PrioritySeparation"=dword:0000000e
+ " S c h e d u l i n g   C a t e g o r y " = " H i g h " 
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 2 , 0 0 , 7 5 , 0 0 , 7 3 , 0 0 , 7 9 , 0 0 , 2 e , 0 0 , 6 1 , 0 0 , 6 e , 0 0 , 6 9 , 0 0 , 0 0 , 0 0 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"PowerThrottling"=dword:00000001
+"MaxMultisampleType"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"AllowGameDVR"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
+"NetworkThrottlingIndex"=dword:ffffffff
+Windows Registry Editor Version 5.00              ---/RegEdit by Techie Savi
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\ApplicationManagement]
+"FeatureSettings"=dword:00000001
+ ;   h t t p s : / / w w w . m a j o r g e e k s . c o m / c o n t e n t / p a g e / h o w _ t o _ d i s a b l e _ o r _ e n a b l e _ h i b e r n a t e _ i n _ w i n d o w s _ 1 0 . h t m l 
+     0 0 , 2 5 , 0 0 , 5 c , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 6 f , 0 0 , 7 2 , 0 0 , 7 3 , 0 0 , 5 c , 0 0 , 6 1 , 0 0 , 6 5 , 0 0 , \ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ]
+"DisableDynamicPstate"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Ndu]Windows Registry Editor Version 5.00
+"MenuShowDelay"="10"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+ " S F I O   P r i o r i t y " = " H i g h " 
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 1 , 0 0 , 7 2 , 0 0 , 7 2 , 0 0 , 6 f , 0 0 , 7 7 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , \ 
+"SizReqBuf"=dword:000044f8
+"Flags"=dword:00000000
+ " I B e a m " = h e x ( 2 ) : 0 0 , 0 0 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameDVR]
+ " G a m e D V R _ E n a b l e d " = d w o r d : 0 0 0 0 0 0 0 0 
+"TCPNoDelay"=dword:00000001
+ " P o w e r T h r o t t l i n g O f f " = d w o r d : 0 0 0 0 0 0 0 1 
+; Disable Auto Maintenance
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching]
+Windows Registry Editor Version 5.00		Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler]
+; Decrease processes kill time and menu show delay
+"FeaturesSettingsOverrideMask"=dword:00000003
+ " H i b e r n a t e E n a b l e d " = d w o r d : 0 0 0 0 0 0 0 0 
+"GameDVR_FSEBehaviorMode"=dword:00000000
+ [ H K E Y _ U S E R S \ . D E F A U L T \ C o n t r o l   P a n e l \ C u r s o r s ] 
+"IRPStackSize"=dword:00000014
+"DefaultTTL"=dword:00000040
+"SFIO Priority"="High"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+     0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+"StartupDelayInMSec"=dword:00000000
+"ScreenSaveActive"=dword:00000000
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+     7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 6 c , 0 0 , 6 9 , 0 0 , 6 e , 0 0 , 6 b , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+ " U p A r r o w " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , \ 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
+"EnablePrefetch"=dword:00000000
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Clock Rate"=dword:00002710
+"GameDVR_Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"GlobalTimerResolutionRequests"=dword:00000001
+"Affinity"=dword:00000000
+     0 0 , 7 2 , 0 0 , 6 f , 0 0 , 5 f , 0 0 , 7 5 , 0 0 , 7 0 , 0 0 , 2 e , 0 0 , 6 3 , 0 0 , 7 5 , 0 0 , 7 2 , 0 0 , 0 0 , 0 0 
+ 
+ [ H K E Y _ U S E R S \ S - 1 - 5 - 1 8 \ C o n t r o l   P a n e l \ D e s k t o p \ M u i C a c h e d ] 
+     0 0 
+ " S v c H o s t S p l i t T h r e s h o l d I n K B " = d w o r d : 0 4 0 0 0 0 0 0 
+ " F o n t S m o o t h i n g " = " 2 " 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+ " S i z e N E S W " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , \ 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"SearchOrderConfig"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
+"HwSchMode"=dword:00000002
+ " U s e r P r e f e r e n c e s M a s k " = h e x : 9 e , 3 e , 0 3 , 8 0 , 1 2 , 0 0 , 0 0 , 0 0 
+ " S i z e N W S E " = h e x ( 2 ) : 2 5 , 0 0 , 5 3 , 0 0 , 7 9 , 0 0 , 7 3 , 0 0 , 7 4 , 0 0 , 6 5 , 0 0 , 6 d , 0 0 , 5 2 , 0 0 , 6 f , 0 0 , 6 f , 0 0 , \ 
+ÿþW i n d o w s   R e g i s t r y   E d i t o r   V e r s i o n   5 . 0 0 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\943c8cb6-6f93-4227-ad87-e9a3feec08d1]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
+"DisableHWAcceleration"=dword:00000000
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"=dword:00000000
+"WaitToKillAppTimeout"="2000"
+"TcpTimedWaitDelay"=dword:0000001e
+"GameDVR_HonorUserFSEBehaviorMode"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\0000]
+"AppCaptureEnabled"=dword:00000000
+ [ H K E Y _ U S E R S \ S - 1 - 5 - 1 8 \ C o n t r o l   P a n e l \ D e s k t o p \ W i n d o w M e t r i c s ] 
+ " P r i o r i t y " = d w o r d : 0 0 0 0 0 0 0 6 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"Attributes"=dword:00000002
+; Disable Hibernation
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Ndu]
+"WaitToKillServiceTimeout"="3000"
+Windows Registry Editor Version 5.00
+
+#===============Ativação simples (ativação do windows)================
+Como fuinciona?
+criar script pra isso:
+
+Esse é um passo a passo para ativar seu Windows 10 PRO sem precisar instalar nenum programa:
+
+Abra o prompt de comando (CMD), clicando no menu iniciar, e digitando CMD, em seguida clique com o botão direito, e selecione a opção de executar como Administrador.
+
+Ao abrir o prompt, cole o seguinte código, e aperte Enter em seguida:
+
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+Na sequência, cole o seguinte código e aperte Enter:
+
+slmgr /skms kms8.msguides.com
+E por fim, cole esse código e aperte Enter:
+
+slmgr /ato
+
+#===============Universal Watermark Disabler (ativação do windows)================
+"A:\Desenvolvimento\CLIENTES\Kairo Soluções & Tecnologias LTDA\10 - Projetos\scripts\old\ativador do windows\uwd.zip"
+queria no meu script poder ter este programa.
+
+#===============Digital Activation Program (ativação do windows)================
+"A:\Desenvolvimento\CLIENTES\Kairo Soluções & Tecnologias LTDA\10 - Projetos\scripts\old\ativador do windows\W10DigitalActivationProgramv1.5.5.2.i.taiwebs.com.zip"
+queria no meu script poder ter este programa.
+
+
+

@@ -1,0 +1,347 @@
+﻿DISTRIBUICAO POR CATEGORIA
+  01    704  General System Optimizations
+  02    470  Power Optimizations
+  03     89  Keyboard and Mouse
+  04   1477  GPU Optimizations
+  05    216  CPU Optimizations
+  06    152  PC clean
+  07   1821  System Debloat
+  08     79  Storage Optimizations
+  09    195  Memory Optimizations
+  10     79  Additional / QOL
+  11    160  Uninstall Useless Apps
+  12    434  Network Tweaking
+  F      7  Fixes and Reverts
+
+=== CAT 01 :: 704 ops :: origem ===
+    src Regra      283
+    src Kind       222
+    src Kairo      129
+    src EXM         70
+  -- top regras --
+      263  \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+      199  
+      178  kind:Registry
+       18  kind:Wmi
+       14  kind:File
+       11  kind:Service
+       10  image file execution options|imagefileexecutionoptions
+       10  explorer\\advanced|\\currentversion\\explorer|visualstyles|\\control panel\\desktop\\
+        1  kind:RegImport
+  -- top paths --
+       28  [EXM:27,Kairo:1] HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search  << 
+       21  [Kind:21] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel  << kind:Registry
+       18  [Kind:18] WMI:path  << kind:Wmi
+       17  [Kind:16,Kairo:1] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager  << kind:Registry
+       15  [Kairo:15] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management  << 
+       13  [Regra:13] HKLM\SYSTEM\CurrentControlSet\Services  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+       12  [Regra:11,Kairo:1] Service:dmwappushservice  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+       12  [EXM:12] HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search  << 
+       11  [Regra:6,Kairo:5] HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced  << explorer\\advanced|\\currentversion\\explorer|visualstyles|\\control panel\\desktop\\
+       10  [Regra:10] HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions  << image file execution options|imagefileexecutionoptions
+        9  [Regra:9] Service:diagnosticshub.standardcollector.service  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+        9  [Kind:9] HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability  << kind:Registry
+        9  [Regra:9] HKLM\SYSTEM\CurrentControlSet\Services\MapsBroker  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+        8  [Regra:4,Kind:4] Service:wuauserv  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+        8  [Regra:8] HKLM\SYSTEM\ControlSet001\Services\BTAGService  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+        8  [Regra:8] HKLM\SYSTEM\ControlSet001\Services\bthserv  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+        8  [Kind:8] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive  << kind:Registry
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv  << \\services\\|sc config|sc stop|sc start|sc delete|sc create|set-service|new-service|remove-service|stop-service|start-service
+
+=== CAT 02 :: 470 ops :: origem ===
+    src Regra      467
+    src Kairo        3
+  -- top regras --
+      329  \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+      114  powercfg|sub_sleep|sub_battery|sub_processor|sub_video
+       16  session manager\\power
+        8  sleepstudy|autosleep|lididentity|allowstandby
+        3  
+  -- top paths --
+      252  [Regra:252] HKLM\SYSTEM\CurrentControlSet\Control\Power  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+       80  [Regra:80] Power:  << powercfg|sub_sleep|sub_battery|sub_processor|sub_video
+       24  [Regra:24] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\TaggedEnergy  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+       24  [Regra:24] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power  << session manager\\power
+       19  [Regra:19] Power:SUB_PROCESSOR  << powercfg|sub_sleep|sub_battery|sub_processor|sub_video
+       12  [Regra:12] Power:SUB_SLEEP  << powercfg|sub_sleep|sub_battery|sub_processor|sub_video
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\ModernSleep  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\1  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SD\IdleState\1  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\3  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        8  [Regra:8] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\2  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        3  [Regra:3] Power:SUB_PCIEXPRESS  << powercfg|sub_sleep|sub_battery|sub_processor|sub_video
+        1  [Regra:1] HKCU\AppEvents\Schemes\Apps\.Default\WindowsLogon\.Current  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        1  [Regra:1] HKCU\AppEvents\Schemes\Apps\.Default\SystemStart\.Current  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        1  [Regra:1] HKCU\AppEvents\Schemes\Apps\.Default\SystemExit\.Current  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        1  [Regra:1] HKCU\AppEvents\Schemes\Apps\.Default\WindowsLogoff\.Current  << \\control\\power|\\control panel\\power|hiberfil|hibernateenabled|standbyidle|hybridsleep|powerthrottling|powersettings|\\schemes\\|setactive
+        1  [Kairo:1] HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\89...  << 
+
+=== CAT 03 :: 89 ops :: origem ===
+    src Regra       52
+    src EXM         24
+    src Kairo       13
+  -- top regras --
+       39  control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+       37  
+        8  services\\(kbdclass|mouclass|kbdhid|mouhid|hidusb|hidserv)
+        5  keyboarddelay|keyboardspeed|keyboardbubbletime|mousehover|mouseclicklock|mousekeys|stickykeys|togglekeys|soundssentry|filterkeys
+  -- top paths --
+       23  [Regra:16,Kairo:7] HKCU\Control Panel\Mouse  << control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+       16  [EXM:12,Regra:4] HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters  << 
+       16  [EXM:12,Regra:4] HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters  << 
+        8  [Regra:8] HKCU\Control Panel\Keyboard  << control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+        5  [Regra:5] HKCU\Control Panel\Accessibility\Keyboard Response  << control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+        5  [Regra:5] HKCU\Control Panel\Accessibility\ToggleKeys  << control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+        5  [Regra:5] HKCU\Control Panel\Accessibility\StickyKeys  << control panel\\(mouse|keyboard|accessibility\\(keyboard response|togglekeys|stickykeys|soundssentry|filterkeys))
+        5  [Regra:5] HKCU\Control Panel\Accessibility\MouseKeys  << keyboarddelay|keyboardspeed|keyboardbubbletime|mousehover|mouseclicklock|mousekeys|stickykeys|togglekeys|soundssentry|filterkeys
+        1  [Kairo:1] Service:BTAGService  << 
+        1  [Kairo:1] Service:BthAudioHF  << 
+        1  [Kairo:1] Service:BthHFSrv  << 
+        1  [Kairo:1] HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Response  << 
+        1  [Kairo:1] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces  << 
+        1  [Kairo:1] Service:bthserv  << 
+
+=== CAT 04 :: 1477 ops :: origem ===
+    src Regra     1414
+    src EXM         41
+    src Kairo       22
+  -- top regras --
+      700  gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+      341  \{4d36e968
+      208  graphicsdrivers|hwschmode|gpupreference|usergpupreferences|disable3dacceleratedrendering|disablehwacceleration|hardwareacceleratedgpu
+       70  \\(nvidia|nvstreamingmanager|amd|atibrt|atikmdag|igdkmd|nvlddmkm|amdkmdag|dxgkrnl|dxgmms)
+       63  
+       40  systemprofile\\tasks\\(games|gamesvscpd|gamesvscat)
+       35  currentversion\\gamedvr|\\gamedvr|allowgamedvr|game_dvr
+       12  \\microsoft\\games|\\direct3d\\|\\opengl\\|vulkan
+        7  \\dwm\\|\\themes\\|flipmodel|flipsdgrm|disableoverlay|msaa|tessellation
+        1  \\software\\intel\\gmm
+  -- top paths --
+      297  [Regra:297] HKLM\System\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000  << \{4d36e968
+      126  [Regra:126] HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power  << graphicsdrivers|hwschmode|gpupreference|usergpupreferences|disable3dacceleratedrendering|disablehwacceleration|hardwareacceleratedgpu
+       46  [Regra:46] HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler  << graphicsdrivers|hwschmode|gpupreference|usergpupreferences|disable3dacceleratedrendering|disablehwacceleration|hardwareacceleratedgpu
+       40  [Regra:40] HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games  << systemprofile\\tasks\\(games|gamesvscpd|gamesvscat)
+       38  [Regra:26,EXM:10,Kairo:2] HKCU\System\GameConfigStore  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+       38  [EXM:24,Regra:14] HKLM\System\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}  << 
+       31  [Regra:28,Kairo:3] HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR  << currentversion\\gamedvr|\\gamedvr|allowgamedvr|game_dvr
+       29  [Regra:26,Kairo:3] HKCU\Software\Microsoft\GameBar  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+       27  [Regra:27] HKLM\SYSTEM\CurrentControlSet\Services\nvlddmkm  << \\(nvidia|nvstreamingmanager|amd|atibrt|atikmdag|igdkmd|nvlddmkm|amdkmdag|dxgkrnl|dxgmms)
+       26  [Regra:26] HKLM\System\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\UMD  << \{4d36e968
+       21  [Regra:20,Kairo:1] HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers  << graphicsdrivers|hwschmode|gpupreference|usergpupreferences|disable3dacceleratedrendering|disablehwacceleration|hardwareacceleratedgpu
+       18  [Regra:16,EXM:2] HKCU\SOFTWARE\Microsoft\DirectX\UserGpuPreferences  << graphicsdrivers|hwschmode|gpupreference|usergpupreferences|disable3dacceleratedrendering|disablehwacceleration|hardwareacceleratedgpu
+       12  [Regra:12] HKCU\SOFTWARE\Microsoft\Games  << \\microsoft\\games|\\direct3d\\|\\opengl\\|vulkan
+       11  [Regra:11] HKCU\System\GameConfigStore\Children\fd061fe8-4abb-49a5-87dc-04b417fc9d58  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+       11  [Regra:11] HKCU\System\GameConfigStore\Children\efb98d70-9539-42ef-aa1d-9dc1a4c393d4  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+       10  [Regra:10] HKLM\SYSTEM\CurrentControlSet\Services\DXGKrnl  << \\(nvidia|nvstreamingmanager|amd|atibrt|atikmdag|igdkmd|nvlddmkm|amdkmdag|dxgkrnl|dxgmms)
+       10  [Regra:10] HKCU\System\GameConfigStore\Children\e45e5935-d67d-4f1c-bccf-bacf6c43fd3c  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+       10  [Regra:10] HKCU\System\GameConfigStore\Children\e7644f6a-21c2-441c-97a8-13ed3ba581b3  << gameconfigstore|gameconfig\\|\\gamebar|gameinputconfig|gamemode
+
+=== CAT 05 :: 216 ops :: origem ===
+    src Regra      150
+    src EXM         66
+  -- top regras --
+       66  
+       44  \\enum\\
+       41  multimedia\\systemprofile|mmcss|schedulercategory
+       18  hypervisorlaunchtype|virtualizationbasedsecurity|deviceguard|hvci|memoryintegrity|coreisolation|credentialguard
+       17  prioritycontrol|schedulpriority
+       11  bcdedit|disablenx|nxoptin|forcevalidatemmpages|bootux|safeboot|isolatedmemory
+        8  interrupt management|messagesignaledinterrupt|affinity policy
+        7  systemresponsiveness|cpucycle|cpmincores|cpmaxcores|cpcoreparking|perfboostmode|boostmode
+        4  x2apic|useplatformclock|useplatformtick|disabledynamictick|onedynamictick|invariantpmc
+  -- top paths --
+       36  [Regra:36] HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Low Latency  << multimedia\\systemprofile|mmcss|schedulercategory
+       21  [Regra:15,EXM:6] BCD:{current}  << bcdedit|disablenx|nxoptin|forcevalidatemmpages|bootux|safeboot|isolatedmemory
+       21  [Regra:21] HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters  << \\enum\\
+       20  [EXM:18,Regra:2] Power:SUB_PROCESSOR  << 
+       13  [Regra:13] HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceGuard  << hypervisorlaunchtype|virtualizationbasedsecurity|deviceguard|hvci|memoryintegrity|coreisolation|credentialguard
+       11  [Regra:11] HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl  << prioritycontrol|schedulpriority
+       10  [Regra:10] HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile  << systemresponsiveness|cpucycle|cpmincores|cpmaxcores|cpcoreparking|perfboostmode|boostmode
+        9  [EXM:9] Power:SUB_SLEEP  << 
+        9  [EXM:9] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel  << 
+        7  [Regra:7] HKLM\SYSTEM\CurrentControlSet\Enum\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Device Pa...  << \\enum\\
+        7  [Regra:7] HKLM\SYSTEM\CurrentControlSet\Enum\HKLM\SYSTEM\CurrentControlSet\Enum\PCI\Device Parameters  << \\enum\\
+        7  [Regra:7] HKLM\SYSTEM\CurrentControlSet\Enum\!pnpid!\Device Parameters  << \\enum\\
+        6  [EXM:6] HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0c...  << 
+        6  [Regra:6] HKLM\SYSTEM\ControlSet001\Control\PriorityControl  << prioritycontrol|schedulpriority
+        6  [EXM:6] HKLM\SYSTEM\ControlSet002\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b6...  << 
+        6  [EXM:6] HKLM\SYSTEM\ControlSet001\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b6...  << 
+        5  [Regra:5] HKLM\System\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInte...  << interrupt management|messagesignaledinterrupt|affinity policy
+        5  [Regra:5] HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity  << hypervisorlaunchtype|virtualizationbasedsecurity|deviceguard|hvci|memoryintegrity|coreisolation|credentialguard
+
+=== CAT 06 :: 152 ops :: origem ===
+    src Regra      100
+    src Kind        48
+    src EXM          4
+  -- top regras --
+       48  kind:Clean
+       48  cleanmgr|vssadmin|\\temp\\|%temp%|recyclebin|softwaredistribution|\\pss\\|memory.dmp|\\logs\\|\\del |del /f|rd /s|rmdir /s|erase /
+       40  dism|startcomponentcleanup|restorehealth|analyzecomponentstore|compactos|wevtutil|clr_migration|winsxs
+       12  \\currentversion\\systemrestore
+        4  
+  -- top paths --
+       85  [Kind:48,Regra:37] Files  << kind:Clean
+       22  [Regra:22] Dism  << dism|startcomponentcleanup|restorehealth|analyzecomponentstore|compactos|wevtutil|clr_migration|winsxs
+       18  [Regra:18] wevtutil  << dism|startcomponentcleanup|restorehealth|analyzecomponentstore|compactos|wevtutil|clr_migration|winsxs
+       12  [Regra:12] HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore  << \\currentversion\\systemrestore
+        6  [EXM:4,Regra:2] cleanmgr  << 
+        5  [Regra:5] Dir  << cleanmgr|vssadmin|\\temp\\|%temp%|recyclebin|softwaredistribution|\\pss\\|memory.dmp|\\logs\\|\\del |del /f|rd /s|rmdir /s|erase /
+        3  [Regra:3] RecycleBin  << cleanmgr|vssadmin|\\temp\\|%temp%|recyclebin|softwaredistribution|\\pss\\|memory.dmp|\\logs\\|\\del |del /f|rd /s|rmdir /s|erase /
+        1  [Regra:1] vssadmin  << cleanmgr|vssadmin|\\temp\\|%temp%|recyclebin|softwaredistribution|\\pss\\|memory.dmp|\\logs\\|\\del |del /f|rd /s|rmdir /s|erase /
+
+=== CAT 07 :: 1821 ops :: origem ===
+    src Regra     1018
+    src EXM        703
+    src Kairo      100
+  -- top regras --
+      803  
+      236  schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+      209  policies\\microsoft|policymanager|policies\\explorer|eventviewer|attachmentmanager|fontprovider|windowsdefender|windows defender
+      118  contentdeliverymanager|contentsdeliverymanager|\\feedback|tips|suggestion|quethours|pushnotifications|toastenabled|notifications\\settings|cloudcontent|hostedappsrings
+      112  \\office\\16\.0\\
+      104  \\currentversion\\ext\\settings\\
+      102  telemetry|datacollection|customerexperience|appcompat\\programdata|\\sqm|\\wer\\|windows error reporting|\\wdi\\|diagnostictracing|diagtrack|state roaming|state repository|\\sip\\|\\aif\\|\\siuf|\\applaunch|programdataupdater
+       53  \\currentversion\\settingsync
+       39  \\control\\wmi\\autologger\\
+       23  cortana|bingsearch|textinput\\(datacollection|reporting)|advertisingid|\\privacy\\|\\edge\\|edgeupdate|smartscreenenabled
+       12  microsoft\\edge|program files \(x86\)\\microsoft\\edge
+       10  office\\16\.0\\(common|osm|security|tools|registration)|outlook\\16\.0\\(mail|preferences)|\\cdp\\|crossdevice
+  -- top paths --
+       96  [Regra:94,Kairo:2] HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync  << policies\\microsoft|policymanager|policies\\explorer|eventviewer|attachmentmanager|fontprovider|windowsdefender|windows defender
+       50  [Regra:31,Kairo:19] HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager  << contentdeliverymanager|contentsdeliverymanager|\\feedback|tips|suggestion|quethours|pushnotifications|toastenabled|notifications\\settings|cloudcontent|hostedappsrings
+       45  [Regra:36,EXM:9] HKCU\Software\Microsoft\Office\16.0\OSM\preventedapplications  << \\office\\16\.0\\
+       36  [Regra:26,EXM:8,Kairo:2] HKLM\Software\Policies\Microsoft\Windows\System  << policies\\microsoft|policymanager|policies\\explorer|eventviewer|attachmentmanager|fontprovider|windowsdefender|windows defender
+       29  [EXM:24,Kairo:3,Regra:2] HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection  << 
+       25  [Regra:20,EXM:5] HKCU\Software\Microsoft\Office\16.0\OSM\preventedsolutiontypes  << \\office\\16\.0\\
+       24  [EXM:12,Regra:9,Kairo:3] HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat  << 
+       22  [Regra:12,EXM:10] Task:\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       22  [Regra:18,EXM:3,Kairo:1] HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting  << telemetry|datacollection|customerexperience|appcompat\\programdata|\\sqm|\\wer\\|windows error reporting|\\wdi\\|diagnostictracing|diagtrack|state roaming|state repository|\\sip\\|\\aif\\|\\siuf|\\applaunch|programdataupdater
+       22  [Regra:22] HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\%PROFILENAME%  << policies\\microsoft|policymanager|policies\\explorer|eventviewer|attachmentmanager|fontprovider|windowsdefender|windows defender
+       22  [Regra:12,EXM:10] Task:\Microsoft\Windows\Customer Experience Improvement Program\Consolidator  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Application Experience\ProgramDataUpdater  << telemetry|datacollection|customerexperience|appcompat\\programdata|\\sqm|\\wer\\|windows error reporting|\\wdi\\|diagnostictracing|diagtrack|state roaming|state repository|\\sip\\|\\aif\\|\\siuf|\\applaunch|programdataupdater
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Customer Experience Improvement Program\Uploader  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Customer Experience Improvement Program\BthSQM  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Shell\FamilySafetyUpload  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+       21  [Regra:11,EXM:10] Task:\Microsoft\Windows\Shell\FamilySafetyRefresh  << schtasks|scheduledtask|consolidator|usbc eip|kernelceip|bthsqm|familysafety|\\maintenance\\|diskdiagnostic|power efficiency diagnostics
+
+=== CAT 08 :: 79 ops :: origem ===
+    src EXM         56
+    src Regra       23
+  -- top regras --
+       56  
+        9  device parameters\\disk|enablehddparking|idle3|idlepowerdown|pminimizepower
+        8  winsat|diskcleanup|usnjsvc|trim|deletetoc
+        6  ntfs|8dot3|lastaccess|disableindexing|\\frv|ftdisk|\\partmgr|storahci|\\disk\\|volsnap|defragsvc|defrag
+  -- top paths --
+       12  [EXM:12] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\3  << 
+       12  [EXM:12] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\2  << 
+       12  [EXM:12] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\1  << 
+       12  [EXM:12] HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SD\IdleState\1  << 
+        8  [Regra:8] Task:\Microsoft\Windows\Maintenance\WinSAT  << winsat|diskcleanup|usnjsvc|trim|deletetoc
+        8  [EXM:6,Regra:2] HKLM\SYSTEM\CurrentControlSet\Enum\Device Parameters\Disk  << 
+        6  [Regra:6] HKLM\System\CurrentControlSet\Services  << device parameters\\disk|enablehddparking|idle3|idlepowerdown|pminimizepower
+        4  [EXM:2,Regra:2] HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Device Parameters\Disk  << 
+        2  [Regra:2] %%a  << device parameters\\disk|enablehddparking|idle3|idlepowerdown|pminimizepower
+        2  [Regra:2] HKLM\SYSTEM\CurrentControlSet\Control\FileSystem  << ntfs|8dot3|lastaccess|disableindexing|\\frv|ftdisk|\\partmgr|storahci|\\disk\\|volsnap|defragsvc|defrag
+        1  [Regra:1] %a  << device parameters\\disk|enablehddparking|idle3|idlepowerdown|pminimizepower
+
+=== CAT 09 :: 195 ops :: origem ===
+    src Regra      153
+    src EXM         42
+  -- top regras --
+      122  memory management|largesystemcache|pagedpool|nonpagedpool|poolusage|poolsize|memorycompression|clearpagefile|physicaladdressextension|ioportsize|disableexecpagesoptimization
+       42  
+       31  sysmain|prefetch|superfetch|disablepagingexecutive|pagingfiles|pagefile
+  -- top paths --
+      116  [Regra:110,EXM:6] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management  << memory management|largesystemcache|pagedpool|nonpagedpool|poolusage|poolsize|memorycompression|clearpagefile|physicaladdressextension|ioportsize|disableexecpagesoptimization
+       36  [EXM:36] HKLM\SYSTEM\CurrentControlSet\Control  << 
+       25  [Regra:25] Files  << sysmain|prefetch|superfetch|disablepagingexecutive|pagingfiles|pagefile
+       12  [Regra:12] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters  << memory management|largesystemcache|pagedpool|nonpagedpool|poolusage|poolsize|memorycompression|clearpagefile|physicaladdressextension|ioportsize|disableexecpagesoptimization
+        6  [Regra:6] Service:SysMain  << sysmain|prefetch|superfetch|disablepagingexecutive|pagingfiles|pagefile
+
+=== CAT 10 :: 79 ops :: origem ===
+    src Regra       46
+    src Kairo       33
+  -- top regras --
+       33  
+       28  wallpaper|theme|darkmode|themes\\|\\themes|\\dark|\\light|taskbar|startmenu|start menu|\\explorer\\startpage|controlpanel\\desktop|\\desktop\\
+       12  faststartup|hpet|legacy|numlock|bootanimation|quietboot|logo|\\currentversion\\run|runonce|startupreg|\\startup\\
+        4  windowsupdate|wu\\|wuaueng|\\windows update\\|usoschedule|\\deliveryoptimization|\\updateorchestrator|\\update\\orchestrator|wusa|noautoupdate|auoptions
+        1  uac|enablelua|consentpromptbehavior|filteradministrator|promptonsecuredesktop
+        1  fileext|hidefileext|showinfosec|superhidden|folderoptions|contextmenu|context menus|\\shell\\|\\shellex\\|jumplist|nojumplist|norecent
+  -- top paths --
+       21  [Regra:21] HKCU\Control Panel\Desktop  << wallpaper|theme|darkmode|themes\\|\\themes|\\dark|\\light|taskbar|startmenu|start menu|\\explorer\\startpage|controlpanel\\desktop|\\desktop\\
+        8  [Regra:8] HKCU\Software\Microsoft\Windows\CurrentVersion\Run  << faststartup|hpet|legacy|numlock|bootanimation|quietboot|logo|\\currentversion\\run|runonce|startupreg|\\startup\\
+        4  [Regra:4] HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run  << faststartup|hpet|legacy|numlock|bootanimation|quietboot|logo|\\currentversion\\run|runonce|startupreg|\\startup\\
+        4  [Regra:4] HKU\S-1-5-18\Control Panel\Desktop\MuiCached  << wallpaper|theme|darkmode|themes\\|\\themes|\\dark|\\light|taskbar|startmenu|start menu|\\explorer\\startpage|controlpanel\\desktop|\\desktop\\
+        4  [Kairo:4] HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings  << 
+        3  [Kairo:3] HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU  << 
+        3  [Kairo:3] HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsSelfHost\Applicability  << 
+        2  [Kairo:2] HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate  << 
+        2  [Kairo:2] Service:wuauserv  << 
+        2  [Kairo:2] HKLM\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization  << 
+        2  [Kairo:2] HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching  << 
+        2  [Kairo:1,Regra:1] HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config  << 
+        2  [Regra:2] HKU\S-1-5-18\Control Panel\Desktop\WindowMetrics  << wallpaper|theme|darkmode|themes\\|\\themes|\\dark|\\light|taskbar|startmenu|start menu|\\explorer\\startpage|controlpanel\\desktop|\\desktop\\
+        2  [Regra:2] HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization  << windowsupdate|wu\\|wuaueng|\\windows update\\|usoschedule|\\deliveryoptimization|\\updateorchestrator|\\update\\orchestrator|wusa|noautoupdate|auoptions
+        1  [Kairo:1] HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE  << 
+        1  [Regra:1] HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced  << fileext|hidefileext|showinfosec|superhidden|folderoptions|contextmenu|context menus|\\shell\\|\\shellex\\|jumplist|nojumplist|norecent
+        1  [Kairo:1] Service:WaaSMedicSvc  << 
+        1  [Kairo:1] Service:DoSvc  << 
+
+=== CAT 11 :: 160 ops :: origem ===
+    src EXM        130
+    src Regra       30
+  -- top regras --
+      130  
+       30  appxpackage|appxprovisioned|provisionedpackage|stagedapplications|packagedinstallers
+  -- top paths --
+      156  [EXM:130,Regra:26] AppxPackage  << 
+        4  [Regra:4] AppxProvisioned  << appxpackage|appxprovisioned|provisionedpackage|stagedapplications|packagedinstallers
+
+=== CAT 12 :: 434 ops :: origem ===
+    src Regra      393
+    src EXM         22
+    src Kairo       13
+    src Kind         6
+  -- top regras --
+      243  \{4d36e972
+       85  netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+       64  tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+       35  
+        6  kind:NetShell
+        1  tcpmaxconnectretries|tcpnodelay|tcpdelack|tcpclosewait|defaultttl|tosdescriptor|fastroute|initialrto|maxconnectionsper|1323opts|securityprotocols
+  -- top paths --
+      243  [Regra:243] HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}  << \{4d36e972
+       69  [Regra:69] netsh  << netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+       24  [Regra:16,Kairo:4,EXM:4] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+       18  [Regra:18] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%q  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+       16  [Regra:9,Kairo:4,EXM:3] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+       15  [Regra:12,EXM:3] WMI:path  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+       12  [EXM:12] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%q  << 
+        7  [Regra:7] netsh:interface:ipv4  << netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+        7  [Kind:6,Regra:1] Set-NetTcpSetting  << kind:NetShell
+        6  [Regra:6] netsh:interface:ipv6  << netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+        5  [Regra:5] HKLM\SYSTEM\CurrentControlSet\Services\NDIS\Parameters  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+        3  [Regra:3] HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+        2  [Kairo:2] HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters  << 
+        1  [Kairo:1] HKLM\SYSTEM\ControlSet001\Services\Ndu  << 
+        1  [Regra:1] netsh:interface:ipv4/ipv6  << netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+        1  [Kairo:1] HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management  << 
+        1  [Regra:1] netsh:winsock:reset  << netsh|netdom|networklist|networkprovider|netbios|llmnr|multicast|autotuninglevel
+        1  [Regra:1] HKLM\SYSTEM\ControlSet001\services\TCPIP6\Parameters  << tcpip|\\afd\\|dnsapi|dnscache|dhcpsvc|\\nsi\\|mrxsmb|lanman(server|workstation)|\\netbt|\\winsck|mpsdrv|\\pacer\\|qwave|\\ndis\\|wcmsvc|wlanapi|wlansvc|iphlpsvc|dhcpcservice
+
+=== CAT F :: 7 ops :: origem ===
+    src Arquivo      7
+  -- top regras --
+        7  
+  -- top paths --
+        2  [Arquivo:2] BCD:{current}  << 
+        1  [Arquivo:1] HKU\S-1-5-18\Control Panel\Desktop\MuiCached  << 
+        1  [Arquivo:1] HKU\S-1-5-18\Control Panel\Desktop  << 
+        1  [Arquivo:1] $bkRoot  << 
+        1  [Arquivo:1] Task:Intelligent StandbyList Cleaner  << 
+        1  [Arquivo:1] Task:$tn2  << 

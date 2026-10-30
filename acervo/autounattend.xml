@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================================
+  Kairo Tweaker :: autounattend.xml
+  ============================================
+  Este arquivo faz o Windows, DURANTE A INSTALAÇÃO, executar o Kairo Tweaker
+  automaticamente e aplicar o perfil escolhido.
+
+  Como usar:
+   1. Coloque esta pasta (Kairo Tweaker) na raiz do pendrive, ex: E:\Kairo Tweaker
+   2. Coloque ESTE arquivo na raiz do pendrive como autounattend.xml
+      ex: E:\autounattend.xml
+   3. Boot pelo pendrive. Escolha "Install now" ou "Instalar agora".
+      O Windows aplica tudo sozinho, sem tocar em nada.
+   4. Depois da primeira tela azul, o Kairo Tweaker roda sozinho.
+
+  Como escolher o perfil:
+   - Edite o arquivo E:\Kairo Tweaker\instalar.config (é um texto simples).
+     Mudou o nome do perfil lá dentro, muda o que é instalado.
+
+  Perfis disponíveis (veja o LEIA-ME.md):
+   basico | jogo | performance | privacidade | energia | rede | limpo
+   update | update.total
+
+  IMPORTANTE:
+   - O script roda DEPOIS que o Windows está instalado (passo specialize).
+   - Cada mudança feita é registrada e pode ser desfeita com -ReverterUltimo.
+   - O script cria um ponto de restauração antes de aplicar.
+   - Se o pendrive não estiver presente, a instalação continua normal.
+  ============================================================================
+-->
+<unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UILanguage>pt-BR</UILanguage>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UserData>
+				<UserData>
+					<AcceptEula>true</AcceptEula>
+				</UserData>
+				<AcceptEula>true</AcceptEula>
+			</UserData>
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+
+	<settings pass="generalize"></settings>
+
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ComputerName>PC-KAIRO</ComputerName>
+			<TimeZone>E. South America Standard Time</TimeZone>
+		</component>
+		<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<RunSynchronous>
+				<!-- COPIA O Kairo Tweaker DO PENDRIVE PARA O DISCO -->
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>cmd.exe /c for %%D in (D E F G H) do (if exist "%%D:\Kairo Tweaker\KairoTweaker.cmd" (xcopy "%%D:\Kairo Tweaker" "C:\Kairo Tweaker" /E /I /Y /Q &gt;nul 2&gt;&amp;1 &amp; echo KOPIADO-DO-%%D &gt; C:\Windows\Temp\kairo_drive.txt &amp; goto :fim)) &amp; :fim</Path>
+					<Description>Copia o Kairo Tweaker do pendrive</Description>
+				</RunSynchronousCommand>
+				<!-- EXECUTA A OTIMIZACAO -->
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>cmd.exe /c if exist "C:\Kairo Tweaker\KairoTweaker.ps1" (powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Kairo Tweaker\KairoTweaker.ps1" -InstalarAutomatico &gt; C:\Windows\Temp\kairo_instalacao.log 2&gt;&amp;1) else (echo "Kairo Tweaker nao encontrado no pendrive. Instalacao normal." &gt; C:\Windows\Temp\kairo_instalacao.log)</Path>
+					<Description>Aplica o perfil de otimizacao do Kairo Tweaker</Description>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+
+	<settings pass="auditSystem"></settings>
+	<settings pass="auditUser"></settings>
+
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<InputLocale>0416:00000416</InputLocale>
+			<SystemLocale>pt-BR</SystemLocale>
+			<UILanguage>pt-BR</UILanguage>
+			<UserLocale>pt-BR</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<OOBE>
+				<HideEULAPage>true</HideEULAPage>
+				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<ProtectYourPC>3</ProtectYourPC>
+			</OOBE>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>cmd.exe /c if exist "C:\Kairo Tweaker\KairoTweaker.cmd" start "" "C:\Kairo Tweaker\KairoTweaker.cmd" -Diagnostico</CommandLine>
+					<Description>Abre o diagnostico do Kairo Tweaker no primeiro login</Description>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+	</settings>
+
+</unattend>

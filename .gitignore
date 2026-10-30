@@ -15,3 +15,8 @@ codigo/IsoBuild/
 # Recursos embutidos sao versionados de proposito
 !codigo/PowerPlans/**/*.pow
 !codigo/Drivers/**
+
+# Acervo: binários pesados e concentradores de alto risco ficam fora do repositório público
+acervo/*.7z
+acervo/ativador*
+acervo/Desabilitar UAC.reg
