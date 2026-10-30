@@ -1,0 +1,54 @@
+PHANTOM UI v1.0.0
+==================
+
+Ajuste fino do Windows para jogos: diagnóstico de hardware, otimização automática e manual,
+BIOS, drivers oficiais, reparos e geração de Windows pré-otimizado. Português (BR) e inglês.
+
+O que o PHANTOM UI faz de diferente: mostra o comando exato e o risco de cada ajuste,
+guarda o estado anterior e desfaz com um clique. Os tweaks que estragam o Windows
+(pagefile zero, TdrLevel zero, apagar Prefetch) ficam bloqueados e explicados.
+
+REQUISITOS
+- Windows 10 20H2 ou Windows 11, 64 bits. Não precisa instalar o .NET (vem dentro do .exe).
+- Para temperatura e consumo da CPU: instale o driver PawnIO (uma vez só):
+      winget install namazso.PawnIO
+- Aceite o pedido de administrador ao abrir (necessário para ler sensores e aplicar tweaks).
+- Para gerar ISO: Windows ADK (Deployment Tools) fornece o oscdimg.exe oficial.
+  Sem o ADK o modo pendrive bootável continua funcionando normalmente.
+
+PRIMEIROS PASSOS
+1. AUTO-OTIMIZADOR: clique em ANALISAR HARDWARE. O app mostra CPU/GPU/RAM/discos/notebook-
+   ou-desktop/anti-cheats e lista os gargalos (RAM em canal único, XMP desligado, ReBAR off,
+   BIOS antiga, Secure Boot/TPM). Escolha um perfil e aplique — ele cria um ponto de
+   restauração antes e só usa o que é compatível com a sua máquina.
+2. OTIMIZAÇÃO MANUAL: 212 tweaks em 15 seções. Cada card mostra o que faz, o comando exato,
+   o risco e o estado atual. Aplique um por um ou marque vários. Tudo é reversível:
+   REVERTER no card, REVERTER SELECIONADOS ou DESFAZER SESSÃO no rodapé.
+3. JOGOS DIRETOS: DETECTAR JOGOS e depois OTIMIZAR no jogo que você usa (Warzone, CS2,
+   Fortnite, Valorant, FiveM, Apex, BF6, Marvel Rivals, Tarkov, PUBG, ARC Raiders, Delta
+   Force, The Finals, GTA V, Minecraft, Rust, LoL, Dota 2, Overwatch 2, R6, Destiny 2,
+   War Thunder, Roblox e mais). A config original é copiada para .phantomui.bak.
+4. DIAGNÓSTICO & REPAROS: rode ESCANEAR AGORA antes de culpar o jogo pelo stutter.
+   Ele lê S.M.A.R.T., WHEA, TDR, BSOD, bit sujo, Windows Update, hosts, DNS e pagefile.
+5. VERIFICAÇÃO & RELATÓRIO: roda a checagem do próprio catálogo (id duplicado, perfil quebrado,
+   comando da lista de mitos fora da seção de bloqueio) e gera um relatório da máquina para
+   suporte, sem dado pessoal.
+6. WINDOWS PRÉ-OTIMIZADO: aponte a ISO OFICIAL da Microsoft, escolha o pendrive (ou marque
+   só gerar ISO) e clique em GERAR MÍDIA PRÉ-OTIMIZADA.
+
+O QUE NUNCA É FEITO
+- Pagefile 0, TdrLevel 0, lsass/svchost em Idle, disableelamdrivers, AGPConcur, apagar
+  Prefetch ou WinSxS, desativar Defender ou o hipervisor com anti-cheat instalado.
+  Esses itens aparecem na seção "Mitos Bloqueados por Segurança", apenas documentados.
+
+ONDE FICAM OS BACKUPS
+- %AppData%\PhantomUI\Backups\          diário transacional (JSONL) por tweak e por sessão
+- %AppData%\PhantomUI\Reports\          relatórios de BIOS e de auditoria de drivers
+- Documentos\PhantomUI-Drivers\         exportação dos drivers (pnputil)
+- %AppData%\PhantomUI\IsoBuild\         mídia de instalação em preparação
+
+AVISO
+Otimização mexe no sistema operacional. Use o ponto de restauração, leia o nível de risco
+e faça backup dos seus dados antes de aplicar lotes grandes.
+
+LICENÇA: MIT. Base original de GustavoReset (ResetExplode).

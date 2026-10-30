@@ -1,0 +1,65 @@
+PHANTOM UI v1.0.0 · COMO TESTAR NO SEU WINDOWS
+================================================
+
+O QUE VOCE TEM AQUI
+Projeto completo, com codigo que compila limpo (0 erro, 0 aviso, Debug e Release)
+e verificacao estatica sem erro. Nao foi possivel rodar a interface no ambiente
+onde o projeto foi montado (Linux), entao a primeira execucao real e na sua maquina.
+
+1. INSTALAR O SDK (uma vez)
+   Baixe o .NET SDK 8: https://dotnet.microsoft.com/download/dotnet/8.0
+   Confira no PowerShell:  dotnet --version      (precisa aparecer 8.x)
+
+2. COMPILAR
+   Abra o PowerShell na pasta codigo:
+       cd <pasta do projeto>\codigo
+       powershell -ExecutionPolicy Bypass -File scripts\build-verificacao.ps1
+   Ou direto:
+       dotnet build PhantomUI.csproj -c Release
+
+   Sem erro? Siga. Com erro? Copie a mensagem inteira e me mande.
+
+3. GERAR O .EXE UNICO (sem precisar de .NET no PC de destino)
+   Na pasta codigo:
+       publicar.bat
+   O arquivo sai em ..\temp\dist\PhantomUI.exe (self-contained, win-x64).
+
+4. RODAR
+   Clique com o botao direito no PhantomUI.exe e escolha "Executar como administrador".
+   O Windows vai avisar que o app nao tem assinatura digital paga:
+   "Mais informacoes" > "Executar assim mesmo".
+
+5. TESTE RAPIDO (5 minutos, nesta ordem)
+   a) Abre sem excecao e mostra hardware, temperatura e uso de RAM/CPU.
+   b) Menu lateral: passe por TODAS as telas. Nenhuma pode ficar em branco nem travar.
+   c) VERIFICACAO (grupo Sistema & Drivers): clique em VERIFICAR AGORA.
+      Esperado: "Catalogo integro: nenhum problema encontrado."
+      Depois clique em GERAR RELATORIO e confira o arquivo em %AppData%\PhantomUI\Reports.
+   d) RAM & PROGRAMAS: LIBERAR MEMORIA AGORA. Confira os MB liberados.
+   e) Otimizacao Manual: aplique 1 tweak de risco baixo, veja o estado mudar para
+      aplicado, depois REVERTER e confira no registro que voltou.
+   f) Jogos Diretos: DETECTAR JOGOS, otimize um jogo que voce tenha, e confira o
+      arquivo .phantomui.bak ao lado do original.
+   g) Diagnostico & Reparos: ESCANEAR AGORA. Ele pode demorar; e leitura de log.
+
+6. O QUE OLHAR COM ATENCAO (depende da sua maquina)
+   - Temperatura/consumo da CPU vazio: instale o driver PawnIO
+         winget install namazso.PawnIO
+     e reabra o app.
+   - Gerar ISO: precisa do Windows ADK (Deployment Tools) pelo oscdimg.exe.
+     Sem o ADK, o modo pendrive continua funcionando.
+   - PCIe MSI, planos de energia e WHQL mexem em driver e energia de verdade:
+     teste primeiro em maquina que voce possa reiniciar.
+
+7. SE ALGO FALHAR
+   Me mande: a tela onde parou, o texto do erro, e o relatorio gerado em
+   %AppData%\PhantomUI\Reports\support_<data>.txt
+
+8. CHECKLIST COMPLETO
+   docs\CHECKLIST-TESTE-WINDOWS.md (27 itens, do mais rapido ao que exige reinicio)
+
+ARQUIVOS DE APOIO
+   codigo\LEIA-ME.txt        texto para o usuario final
+   codigo\README.md          visao geral, recursos e regras de seguranca
+   codigo\NOVIDADES.md       nota de versao
+   docs\CHECKLIST-TESTE-WINDOWS.md

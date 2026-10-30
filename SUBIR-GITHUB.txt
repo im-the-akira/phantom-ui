@@ -1,0 +1,64 @@
+SUBIR O PROJETO PARA O GITHUB (repositorio novo)
+================================================
+
+O repositorio im-the-akira/PhantomUI ja existe e tem um README automatico.
+Criar um novo evita qualquer conflito e e o caminho mais rapido.
+
+Sugestao de nome:
+    https://github.com/im-the-akira/phantomui-app.git
+
+--------------------------------------------------------------------------
+PASSO 1 · criar o repositorio vazio (30 segundos)
+--------------------------------------------------------------------------
+Abra https://github.com/new
+
+    Repository name : phantomui-app
+    Visibility      : Public (ou Private, tanto faz para o push)
+    Add README      : NAO marcar
+    Add .gitignore  : NAO marcar
+    License         : NAO marcar
+
+Clique em Create repository. Ignore os comandos que o GitHub mostra.
+
+--------------------------------------------------------------------------
+PASSO 2 · enviar (no seu PC, dentro da pasta do projeto)
+--------------------------------------------------------------------------
+    cd C:\caminho\do\projeto
+
+    git init -b main
+    git add -A
+    git commit -m "PhantomUI v1.0.0"
+    git remote add origin https://github.com/im-the-akira/phantomui-app.git
+    git push -u origin main
+
+Na primeira vez o Windows pede login do GitHub (Git Credential Manager).
+Um navegador abre, voce autoriza, e o push segue sozinho.
+
+--------------------------------------------------------------------------
+PASSO 3 · release automatica com o .exe
+--------------------------------------------------------------------------
+    git tag v1.0.0
+    git push origin v1.0.0
+
+O workflow .github/workflows/publicar.yml compila no Windows e publica o
+PhantomUI.exe (arquivo unico, self-contained) na aba Releases.
+
+--------------------------------------------------------------------------
+CONFERIR
+--------------------------------------------------------------------------
+No GitHub devem aparecer: AGENTS.md, CLAUDE.md, COMO-TESTAR.txt, SUBIR-GITHUB.txt,
+codigo/, docs/, memoria/, projeto/, handoffs/, .github/, .gitignore.
+Nao aparece (de proposito): temp/, bin/, obj/, *.exe, *.iso.
+
+--------------------------------------------------------------------------
+POR QUE EU NAO ENVIO DAQUI
+--------------------------------------------------------------------------
+O push exige credencial sua. Neste ambiente nao existe token, nao existe
+gh instalado, nao existe o conector GitHub (testado, volta indisponivel) e
+o .git local nao sobrevive entre mensagens. Testei o push e o Git responde:
+"could not read Username for https://github.com".
+
+Se voce quiser mesmo que eu envie: crie um token fine-grained com permissao
+contents:write apenas nesse repositorio e me passe. Nao recomendo, porque
+token em conversa e segredo exposto. Se decidir por isso, revogue o token
+logo depois do push.

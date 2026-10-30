@@ -1,0 +1,26 @@
+# Build
+bin/
+obj/
+publish/
+*-dist/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+.idea/
+
+# Artefatos locais
+*.log
+*.iso
+IsoBuild/
+
+# Drivers seriais embutidos (PORTAS & MAKER): as DLLs fazem parte dos pacotes assinados
+!Drivers/**
+# Planos de energia .pow sao versionados de proposito (recurso embutido)
+!PowerPlans/**/*.pow

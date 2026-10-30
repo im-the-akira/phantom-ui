@@ -1,0 +1,17 @@
+# Projeto Optimizer X (raiz)
+temp/
+codigo/bin/
+codigo/obj/
+codigo/publish/
+codigo/*-dist/
+*.user
+*.suo
+.vs/
+.idea/
+*.iso
+codigo/IsoBuild/
+*.log
+
+# Recursos embutidos sao versionados de proposito
+!codigo/PowerPlans/**/*.pow
+!codigo/Drivers/**

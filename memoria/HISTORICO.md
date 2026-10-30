@@ -1,0 +1,15 @@
+# HISTORICO
+
+Uma linha por entrega, com data, o que foi feito, motivo e evidencia.
+
+| Data | Entrega | Motivo | Evidencia |
+| 2026-10-29 | Rebrand completo do ResetExplode para PHANTOM UI v1.0.0, com 217 tweaks em 15 secoes, 25 jogos, 34 planos de energia, 43 apps e 14 motores | Pedido do Gabriel | build 0 erro 0 aviso, commit no repositorio |
+| 2026-10-29 | Motores de BIOS, diagnostico e reparo, Windows pre-otimizado, auditoria de driver oficial, purga de memoria, MSI de PCIe, benchmark de DNS | Pedido do Gabriel | build 0 erro 0 aviso |
+| 2026-10-29 | README, LICENSE, LEIA-ME, NOVIDADES v1.0.0, publicar.bat e workflow renomeados para PhantomUI | Fechamento da v1.0.0 | build 0 erro 0 aviso |
+| 2026-10-29 | Projeto adequado ao padrao Nexor: codigo movido para `codigo/`, AGENTS.md e CLAUDE.md criados, memoria, projeto, docs, handoffs e temp criados, build revalidado a partir da raiz nova | R001, pedido do Gabriel | build 0 erro 0 aviso em Debug e Release a partir de `codigo/` |
+| 2026-10-29 | Página Verificação & Relatório, `CatalogIntegrity` (id duplicado, perfil quebrado, comando perigoso fora da seção de bloqueio) e `SupportReport` (relatório sem dado pessoal) | R004 pedido do Gabriel: app que se verifica e gera suporte | build 0 erro 0 aviso + `verificar-codigo.py` OK |
+| 2026-10-29 | `codigo/scripts/verificar-codigo.py` no CI e no build: recurso de XAML inexistente, x:Name órfão, handler fantasma, página fora do ShowPage, id duplicado | o compilador não pega essa classe de erro, que só aparece em execução | script roda antes do build, sai 0 com 212 ids únicos |
+| 2026-10-29 | Removido o pipeline legado `WindowsTweaks`/`_tweaks`/`Tweak_Click` (fonte de estado duplicado); dashboard passou a ler o catálogo novo | duas fontes de verdade para o mesmo tweak confundiam "aplicado" | build 0 erro 0 aviso, `_tweaks` com 0 referências |
+| 2026-10-29 | 8 páginas (Sensores, GPU, Sistema, Benchmark, Stress, Jogos, Overlay, Bottleneck) ganharam atualização ao abrir | abriam sem refresh ao navegar | build 0 erro, `ShowPage`/switch sem página órfã |
+| 2026-10-29 | Contagem corrigida para 212 tweaks (69 Os, 62 Perf, 81 Games) no README, LEIA-ME e NOVIDADES | números conferidos no código, não estimados | contagem por regex + `verificar-codigo.py` |
+| 2026-10-30 | Rebrand para PHANTOM UI: namespace, csproj renomeado para PhantomUI.csproj, AssemblyName, Product, título da janela, pasta `%AppData%\PhantomUI`, mutex de instância única, classes de janela nativas, artefatos de benchmark, README, LEIA-ME, NOVIDADES e documentos | decisão do Gabriel pelo nome PHANTOM UI, que explica o comportamento (ajusta por baixo, sem aparecer) | build 0 erro 0 aviso em Debug e Release + `verificar-codigo.py` OK |

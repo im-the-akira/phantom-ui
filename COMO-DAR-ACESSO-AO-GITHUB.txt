@@ -1,0 +1,107 @@
+COMO ME DAR ACESSO AO REPOSITORIO (passo a passo simples)
+==========================================================
+
+O GitHub nao deixa ninguem escrever sem uma "chave de acesso". Essa chave
+se chama token. Voce cria uma chave temporaria, so para esse repositorio,
+e cola aqui. Eu uso, subo o projeto, e voce apaga a chave.
+
+Tempo total: uns 3 minutos.
+
+
+PARTE 1 · criar o repositorio (1 minuto)
+-----------------------------------------
+1. Abra no navegador:  https://github.com/new
+2. Em "Repository name" digite:  phantomui-app
+3. Deixe marcado "Public".
+4. NAO marque nada nas caixinhas:
+   - Add a README file
+   - Add .gitignore
+   - Choose a license
+   (se marcar, o push da conflito)
+5. Clique no botao verde "Create repository".
+6. Na tela que abrir, copie a URL que aparece na barra de endereco do
+   navegador. Ela vai ser parecida com:
+       https://github.com/im-the-akira/phantomui-app
+
+
+PARTE 2 · criar a chave (token)
+--------------------------------
+1. Ainda no GitHub, clique na sua FOTO no canto superior direito.
+2. No menu que abrir, clique em "Settings".
+3. Na pagina de Settings, role ate o FINAL da coluna da esquerda.
+   Clique em "Developer settings".
+4. No menu da esquerda, clique em "Personal access tokens".
+5. Clique em "Fine-grained tokens".
+6. Clique no botao "Generate new token".
+7. Preencha assim:
+   - Token name:  phantomui-push
+   - Expiration:  escolha 1 day (ou "Custom" e amanha)
+   - Resource owner:  im-the-akira
+   - Repository access:  marque "Only select repositories"
+   - No seletor que aparece, escolha:  phantomui-app
+8. Ainda nessa mesma pagina, procure "Permissions" e clique em
+   "+ Add permissions" (ou abra "Repository permissions").
+9. Ache "Contents" na lista e mude de "No access" para "Read and write".
+   (Metadata ja fica como "Read-only" sozinho, nao mexa.)
+10. Role ate o final e clique no botao verde "Generate token".
+11. Aparece uma tela com a chave. Ela comeca com: github_pat_
+    Clique no icone de copiar.
+
+    IMPORTANTE: essa chave aparece UMA VEZ so. Se fechar a pagina sem
+    copiar, tem que criar outra.
+
+
+PARTE 3 · colar aqui na conversa
+---------------------------------
+Me mande duas coisas:
+
+    1. A URL do repositorio
+    2. A chave (o texto que comeca com github_pat_)
+
+Exemplo de como pode escrever:
+
+    repo: https://github.com/im-the-akira/phantomui-app
+    token: github_pat_xxxxxxxxxxxxxxxx
+
+Eu configuro o remoto, faco o push e te respondo com:
+    - o numero do commit que subiu
+    - a lista do que apareceu no repositorio
+    - o link da pagina
+
+
+PARTE 4 · apagar a chave (depois que eu confirmar)
+--------------------------------------------------
+Assim que eu disser que subiu:
+
+1. Volte em:  Foto > Settings > Developer settings
+2. "Personal access tokens" > "Fine-grained tokens"
+3. Clique em cima do token "phantomui-push"
+4. No final da pagina, clique em "Delete"
+5. Confirme.
+
+Pronto. A chave morre e ninguem mais usa ela, nem eu.
+
+
+AVISOS IMPORTANTES
+-------------------
+- Trate o token como senha. Quem tem o token consegue escrever no
+  repositorio enquanto ele estiver valido.
+- Nunca mande esse token em grupo, story, print publico ou outro site.
+- Se voce desconfiar que vazou, entre e delete na hora. Nao tem custo
+  nenhum criar outro depois.
+- Se voce errar e a chave nao funcionar, eu aviso o que faltou. O erro
+  mais comum e esquecer de mudar "Contents" para "Read and write".
+
+
+SE PREFERIR NAO DAR ACESSO
+---------------------------
+Da para voce mesmo enviar, sem token nenhum. Na pasta do projeto:
+
+    git init -b main
+    git add -A
+    git commit -m "PhantomUI v1.0.0"
+    git remote add origin https://github.com/im-the-akira/phantomui-app.git
+    git push -u origin main
+
+Na primeira vez o Windows abre uma janela do navegador pedindo login.
+Voce autoriza e o envio acontece sozinho. Nenhuma chave para criar.

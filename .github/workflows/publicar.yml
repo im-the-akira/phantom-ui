@@ -1,0 +1,64 @@
+name: Publicar
+
+# Verificacao a cada push. Release so na tag v*.
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  verificar:
+    name: Build de verificacao (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Verificação estática do XAML e do catálogo
+        run: python3 codigo/scripts/verificar-codigo.py
+
+      - name: Compilar cruzado
+        working-directory: codigo
+        run: |
+          dotnet build PhantomUI.csproj -c Release \
+            -p:EnableWindowsTargeting=true \
+            -p:BaseIntermediateOutputPath=$RUNNER_TEMP/obj/ \
+            -p:BaseOutputPath=$RUNNER_TEMP/bin/ \
+            -o $RUNNER_TEMP/out/ -v q --nologo
+
+  publicar:
+    name: Publicar (Windows)
+    needs: verificar
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Publicar arquivo unico com o .NET embutido
+        working-directory: codigo
+        run: dotnet publish PhantomUI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=None -o ${{ runner.temp }}/dist -nologo
+      - name: Montar pacote
+        shell: pwsh
+        run: |
+          Copy-Item codigo/LEIA-ME.txt ${{ runner.temp }}/dist/LEIA-ME.txt
+          Copy-Item codigo/LICENSE ${{ runner.temp }}/dist/LICENSE.txt
+          Compress-Archive -Path ${{ runner.temp }}/dist/PhantomUI.exe, ${{ runner.temp }}/dist/LEIA-ME.txt, ${{ runner.temp }}/dist/LICENSE.txt -DestinationPath PhantomUI.zip
+      - name: Release da versao
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create $env:GITHUB_REF_NAME PhantomUI.zip ${{ runner.temp }}/dist/PhantomUI.exe --title "OPTIMIZER X $env:GITHUB_REF_NAME" --notes-file codigo/NOVIDADES.md --latest
