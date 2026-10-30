@@ -21,7 +21,7 @@ está em `../codigo/` e é o que evolui. Aqui não se mexe.
 | Versão | 0.16.0 | 1.0.0 |
 | Projeto | `ResetExplode.csproj` | `PhantomUI.csproj` |
 | Escopo | diagnóstico, sensores, benchmarks, stress/OC, overlay, RGB, USB, launcher | tudo do original + otimização com rollback, jogos, BIOS, drivers oficiais, reparos, Windows pré-otimizado, 212 tweaks, 34 planos, 43 apps |
-| Telas | 18 | 28 |
+| Telas | 21 | 28 |
 | Estado | congelado | desenvolvimento |
 
 O PHANTOM UI preserva todas as funções do ResetExplode: monitoramento, benchmarks de CPU, GPU,
