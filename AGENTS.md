@@ -14,7 +14,9 @@ Aplicativo desktop Windows (C# / .NET 8 / WPF) que diagnostica hardware, aplica 
 | Equipes ativas neste projeto | `projeto/AGENTES.md` |
 | Skills e MCPs autorizados aqui | `projeto/SKILLS.md`, `projeto/MCPS.md` |
 | O que esta em andamento | `memoria/FAZENDO.md`, `memoria/COORDENACAO.md` |
-| O que ja foi feito | `memoria/HISTORICO.md` |
+| O que já foi feito | `memoria/HISTORICO.md` |
+| Projeto de origem (ResetExplode) | `original/LEIA-ME.md` |
+| Scripts de tweak estudados | `acervo/LEIA-ME.md` |
 
 ## Regras do projeto
 
