@@ -20,3 +20,7 @@ codigo/IsoBuild/
 acervo/*.7z
 acervo/ativador*
 acervo/Desabilitar UAC.reg
+
+# Build do projeto original copiado
+original/obj/
+original/bin/

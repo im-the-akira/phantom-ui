@@ -120,6 +120,10 @@ PhantomUI/                       raiz do projeto (padrão Nexor)
 
 O nome vem do comportamento: o programa ajusta por baixo, sem aparecer na sua frente durante o jogo. Sem overlay obrigatório, sem processo brigando por CPU, sem serviço rodando o tempo todo. Ele trabalha quando você pede e sai da frente.
 
+## Projeto original
+
+O ponto de partida está preservado em [`original/`](../original) (ResetExplode v0.16.0, MIT, de GustavoReset), compilável e sem alterações. O `codigo/` é a linha de evolução: 18 para 28 telas, 0 para 212 tweaks, 0 para 34 planos de energia, 0 para 43 apps.
+
 ## Créditos e licença
 
 - **MIT** — veja [LICENSE](LICENSE).
